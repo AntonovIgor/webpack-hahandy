@@ -11,6 +11,7 @@
   "author": "Igor Antonov",
   "license": "ISC",
   "dependencies": {
+    "moment": "^2.20.1",
     "normalize.css": "^8.0.0"
   },
   "devDependencies": {
