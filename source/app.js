@@ -1,5 +1,6 @@
 import data from './data';
 import getTemplate from './post';
+import './app.css';
 
 import { renderHtmlFromTemplate, addElementToNode } from './render';
 
