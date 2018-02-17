@@ -1,30 +1,20 @@
-"use strict";
-
-(function() {
-
-    const renderHtmlFromTemplate = (template) => {    
-        const domParser = new DOMParser();
-        const docResult = domParser.parseFromString(template, 'text/html');
-        
-        return docResult.body.firstElementChild;
-    }
+const renderHtmlFromTemplate = (template) => {    
+    const domParser = new DOMParser();
+    const docResult = domParser.parseFromString(template, 'text/html');
     
-    const cleanNode = (node) => {
-        while (node.firstChild) {
-            node.removeChild(node.firstChild);
-        }
-    }    
-    
-    const addElementToNode = (element, parentNode) => {
-        return parentNode.appendChild(element);
-    }
+    return docResult.body.firstElementChild;
+}
 
-    window.render = {
-        renderHtmlFromTemplate,
-        cleanNode,
-        addElementToNode
+const cleanNode = (node) => {
+    while (node.firstChild) {
+        node.removeChild(node.firstChild);
     }
+}    
 
-}());
+const addElementToNode = (element, parentNode) => {
+    return parentNode.appendChild(element);
+}
+
+export { renderHtmlFromTemplate, cleanNode, addElementToNode };
 
 

@@ -1,13 +1,11 @@
-"use strict";
+import data from './data';
+import { getTemplate, renderHtmlFromTemplate } from './render';
 
-(function() {
+const elementToInject = document.querySelector(`.content-cards`);
 
-    const elementToInject = document.querySelector(`.content-cards`);
+data.forEach( (it) => {
+    let newRenderTemplate = getTemplate(it);
+    let postElement = renderHtmlFromTemplate(newRenderTemplate);
+    addElementToNode(postElement, elementToInject);
+});
 
-    window.data.forEach( (it) => {
-        let newRenderTemplate = window.getTemplate(it);
-        let postElement = window.render.renderHtmlFromTemplate(newRenderTemplate);
-        window.render.addElementToNode(postElement, elementToInject);
-    });
-
-})();
