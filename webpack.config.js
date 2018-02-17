@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const extractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './source/app.js',
@@ -24,12 +25,24 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: extractTextWebpackPlugin.extract({
+                    fallback: 'style-loader',
+                    use: {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: true
+                        }
+                    }
+                })
             }
         ]
     },
     plugins: [
-        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+        new extractTextWebpackPlugin('post.css'),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"'
+        })
     ],
     stats: {
         colors: true
