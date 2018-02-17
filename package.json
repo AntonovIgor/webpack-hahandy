@@ -4,11 +4,19 @@
   "description": "Демонстрация работы с webpack",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "webpack",
+    "build-prod": "webpack -p"
   },
   "author": "Igor Antonov",
   "license": "ISC",
   "dependencies": {
     "normalize.css": "^8.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^3.11.0"
   }
 }

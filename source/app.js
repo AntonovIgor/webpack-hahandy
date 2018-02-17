@@ -1,5 +1,7 @@
 import data from './data';
-import { getTemplate, renderHtmlFromTemplate } from './render';
+import getTemplate from './post';
+
+import { renderHtmlFromTemplate, addElementToNode } from './render';
 
 const elementToInject = document.querySelector(`.content-cards`);
 
