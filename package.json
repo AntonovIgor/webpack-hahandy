@@ -1,0 +1,14 @@
+{
+  "name": "start-with-webpack",
+  "version": "1.0.0",
+  "description": "Демонстрация работы с webpack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Igor Antonov",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^8.0.0"
+  }
+}
